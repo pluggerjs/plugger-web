@@ -1,0 +1,17 @@
+{
+  "name": "estudo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-ui-router": "^0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server -a localhost -p 8080 -c-1 ./app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
