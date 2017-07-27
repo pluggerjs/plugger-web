@@ -5,11 +5,19 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.6.2",
-    "angular-ui-router": "^0.4.2"
+    "angular-ui-router": "^0.4.2",
+    "axon": "^2.0.3",
+    "axon-rpc": "0.0.3",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "http-server -a localhost -p 8080 -c-1 ./app",
+    "start": "node --debug app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

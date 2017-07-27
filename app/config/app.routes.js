@@ -14,7 +14,7 @@ angular.module('pluggerApp').config(function($stateProvider, $urlRouterProvider)
             url: '/',
             templateUrl: '../components/index/frontpage.html',
             controller: 'indexController'
-        })
+        });
 
 });
 
