@@ -4,28 +4,13 @@
         <h1>Plugger Web</h1>
     </div>
 
-    <div id="module-list" class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-
-            <div class="checkbox" ng-repeat="module in modules">
-                <label>
-                    {{module.name}}
-                </label>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div id="module-form" class="row">
-        <div class="col-sm-8 col-sm-offset-2 text-center">
+    <div>
+        <div class="text-center">
             <form>
                 <div class="form-group">
-
-                    <input type="text" class="form-control input-lg text-center" placeholder="Search field" ng-model="formData.module">
+                    <input type="text" class="text-center form-control" placeholder="Search field" ng-model="formData.module">
                 </div>
-
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="getModules()">Search</button>
+                <button type="submit" class="btn btn-primary" ng-click="getModules()">Search</button>
             </form>
         </div>
     </div>

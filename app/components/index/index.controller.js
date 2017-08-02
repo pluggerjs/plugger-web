@@ -8,6 +8,7 @@ angular.module('pluggerApp').controller('indexController', function ($scope, $ro
 	$scope.getModules = function() {
 		ModuleService.getModules().then(function(res) {
 			$scope.module = res;
+			console.log("foiiiiiii", res);
 		});
 	};
 	

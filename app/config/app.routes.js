@@ -2,7 +2,9 @@
  * Created by romario
  */
 
-angular.module('pluggerApp').config(function($stateProvider, $urlRouterProvider) {
+angular.module('pluggerApp').config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+    $locationProvider.hashPrefix('');
+    //$locationProvider.html5Mode(true);
     
     $urlRouterProvider.otherwise(function ($injector) {
         var $state = $injector.get("$state");
