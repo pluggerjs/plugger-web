@@ -9,9 +9,13 @@
     <div class="panel panel-success" >
 
         <div class="panel-body" ng-hide="empty" ng-show="!empty">
-            <ul class="list-group" ng-repeat="m in modules.lista">
-                <li class="list-group-item list-group-item-success">{{m.name}}</li>
-            </ul>
+            <div class="list-group" ng-repeat="m in modules.lista">
+                <a class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#sub_categoria_{{m.name}}{{m._v}}">{{m.name}}</a>
+
+                <div class="collapse list-group-submenu" id="sub_categoria_{{m.name}}{{m._v}}" ng-repeat="serv in m.services">
+                    <a class="list-group-item sub-item" data-parent="#sub_categoria_{{m.name}}{{m._v}}" >{{serv.name}}</a>
+                </div>
+            </div>
         </div>
         <div class="panel-body" ng-hide="!empty" ng-show="empty">
             <h5>Modules not found</h5>
