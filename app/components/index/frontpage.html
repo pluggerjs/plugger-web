@@ -10,10 +10,14 @@
 
         <div class="panel-body" ng-hide="empty" ng-show="!empty">
             <div class="list-group" ng-repeat="m in modules.lista">
-                <a class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#sub_categoria_{{m.name}}{{m._v}}">{{m.name}}</a>
-
-                <div class="collapse list-group-submenu" id="sub_categoria_{{m.name}}{{m._v}}" ng-repeat="serv in m.services">
-                    <a class="list-group-item sub-item" data-parent="#sub_categoria_{{m.name}}{{m._v}}" >{{serv.name}}</a>
+                <a ng-click="podeClicar()" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#sub_categoria_1">{{m.name}}</a>
+                <div ng-show="clicou">
+                    <div ng-repeat="serv in m.services">
+                        <p>{{serv.name}}</p>
+                    </div>
+                </div>
+                <div  class="collapse list-group-submenu" id="sub_categoria_1" ng-repeat="serv in m.services">
+                    <a class="list-group-item sub-item" data-parent="#sub_categoria_1" >{{serv.name}}</a>
                 </div>
             </div>
         </div>

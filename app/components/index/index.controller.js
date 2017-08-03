@@ -7,8 +7,12 @@ angular.module('pluggerApp').controller('indexController', function ($scope, $ro
 
     $scope.modules = {};
     $scope.modules.lista = [];
+    $scope.clicou = false;
 
 
+    $scope.podeClicar = function() {
+        $scope.clicou = !$scope.clicou;
+    }
 	$scope.getModules = function() {
 		ModuleService.getModules().then(function(result) {
             $scope.modules.lista = [];
@@ -44,7 +48,5 @@ angular.module('pluggerApp').controller('indexController', function ($scope, $ro
         $scope.formData.name = "";
     }
     $scope.getModules();
-
-
 	
 });
