@@ -1,29 +1,20 @@
-<div class="container" ng-init="getModules();">
+<div ng-controller="indexController" class="container" ng-init="getModules();">
 
     <div class="jumbotron text-center">
         <h1>Plugger Web</h1>
         <p>Repository with all active modules at moment</p>
     </div>
 
-    <div>
-        <div class="text-center">
-            <form>
-                <div class="form-group">
-                    <input type="text" class="text-center form-control" placeholder="Search field" ng-model="formData.name">
-                </div>
-                <button type="submit" class="btn btn-primary" ng-click="findByName()">Search</button>
-            </form>
-        </div>
-    </div>
-
 
     <div class="panel panel-success" >
-        <h4>Modules list</h4>
 
-        <div class="panel-body">
-            <ul class="list-group" ng-repeat="m in modules track by $index">
-                <li class="list-group-item">{{m.name}}</li>
+        <div class="panel-body" ng-hide="empty" ng-show="!empty">
+            <ul class="list-group" ng-repeat="m in modules.lista">
+                <li class="list-group-item list-group-item-success">{{m.name}}</li>
             </ul>
+        </div>
+        <div class="panel-body" ng-hide="!empty" ng-show="empty">
+            <h5>Modules not found</h5>
         </div>
 
     </div>

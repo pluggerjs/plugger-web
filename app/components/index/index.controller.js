@@ -3,34 +3,48 @@ angular.module('pluggerApp').controller('indexController', function ($scope, $ro
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.formData = {};
+    $scope.empty = true;
 
-    $scope.modules = [];
+    $scope.modules = {};
+    $scope.modules.lista = [];
+
 
 	$scope.getModules = function() {
 		ModuleService.getModules().then(function(result) {
-            $scope.modules = [];
+            $scope.modules.lista = [];
 
-            result.forEach(function (module) {
-                $scope.modules.push(module);
-            });
+            if (result || result !== "") {
+                $scope.empty = false;
+
+                result.forEach(function (module) {
+                    $scope.modules.lista.push(module);
+                });
+            } else {
+                $scope.empty = true;
+            }
+
 		});
 	};
 
 	$scope.findByName = function () {
-	    $scope.modules = [];
+        $scope.modules.lista = [];
 	    if ($scope.formData.name) {
             ModuleService.getModules().then(function (result) {
-                result.forEach(function (module) {
-                    if(module.name.toString().indexOf($scope.formData.name) >= 0) {
-                        $scope.modules.push(module);
+                $scope.empty = true;
+                result.forEach(function (mocs) {
+                    if(mocs.name.toString().indexOf($scope.formData.name) >= 0) {
+                        $scope.empty = false;
+                        $scope.modules.lista.push(mocs);
                     }
                 });
             });
         } else {
 	        $scope.getModules();
         }
-
+        $scope.formData.name = "";
     }
+    $scope.getModules();
+
 
 	
 });
