@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-init="getModules();">
 
     <div class="jumbotron text-center">
         <h1>Plugger Web</h1>
@@ -9,22 +9,20 @@
         <div class="text-center">
             <form>
                 <div class="form-group">
-                    <input type="text" class="text-center form-control" placeholder="Search field" ng-model="formData.module">
+                    <input type="text" class="text-center form-control" placeholder="Search field" ng-model="formData.name">
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="getModules()">Search</button>
+                <button type="submit" class="btn btn-primary" ng-click="findByName()">Search</button>
             </form>
         </div>
     </div>
 
 
-    <div class="panel panel-default" ng-init="">
+    <div class="panel panel-success" >
         <h4>Modules list</h4>
 
         <div class="panel-body">
-            <ul class="list-group">
-                <div ng-repeat="module in modules">
-                    <li class="list-group-item">{{module.name}}</li>
-                </div>
+            <ul class="list-group" ng-repeat="m in modules track by $index">
+                <li class="list-group-item">{{m.name}}</li>
             </ul>
         </div>
 

@@ -2,27 +2,35 @@
 angular.module('pluggerApp').controller('indexController', function ($scope, $route, $location, ModuleService) {
     $scope.$route = $route;
     $scope.$location = $location;
-	
-	$scope.modules = [];
-	
+    $scope.formData = {};
+
+    $scope.modules = [];
+
 	$scope.getModules = function() {
-		ModuleService.getModules().then(function(res) {
-			$scope.module = res;
-			console.log("foiiiiiii", res);
+		ModuleService.getModules().then(function(result) {
+            $scope.modules = [];
+
+            result.forEach(function (module) {
+                $scope.modules.push(module);
+            });
 		});
 	};
 
-	$scope.modules = [
-        {
-            name: "module1"
-        },
-        {
-            name: "module2"
-        },
-        {
-            name: "module3"
+	$scope.findByName = function () {
+	    $scope.modules = [];
+	    if ($scope.formData.name) {
+            ModuleService.getModules().then(function (result) {
+                result.forEach(function (module) {
+                    if(module.name.toString().indexOf($scope.formData.name) >= 0) {
+                        $scope.modules.push(module);
+                    }
+                });
+            });
+        } else {
+	        $scope.getModules();
         }
-    ]
+
+    }
 
 	
 });

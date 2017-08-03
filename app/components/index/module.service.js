@@ -4,8 +4,12 @@ angular.module('pluggerApp').service('ModuleService', function($http) {
 		
 		return new Promise(function(resolve, reject) {
             $http.get('http://localhost:8000/modules').then(function (res) {
-				console.log("esse é o res", res);
-				return resolve(res.data);
+				if (res.status === 200) {
+                    return resolve(JSON.parse(res.data));
+				} else {
+					return reject(JSON.parse(res.data));
+				}
+
             },
 			function(err) {
 				return reject(err)
