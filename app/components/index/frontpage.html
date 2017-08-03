@@ -2,6 +2,7 @@
 
     <div class="jumbotron text-center">
         <h1>Plugger Web</h1>
+        <p>Repository with all active modules at moment</p>
     </div>
 
     <div>
@@ -13,6 +14,20 @@
                 <button type="submit" class="btn btn-primary" ng-click="getModules()">Search</button>
             </form>
         </div>
+    </div>
+
+
+    <div class="panel panel-default" ng-init="">
+        <h4>Modules list</h4>
+
+        <div class="panel-body">
+            <ul class="list-group">
+                <div ng-repeat="module in modules">
+                    <li class="list-group-item">{{module.name}}</li>
+                </div>
+            </ul>
+        </div>
+
     </div>
 
 </div>
