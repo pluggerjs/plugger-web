@@ -1,26 +1,12 @@
-<div class="jumbotron text-center">
-    <h1>Plugger Web</h1>
-    <p>Repository with all active modules at moment</p>
+<div ng-hide="empty" ng-show="!empty">
+    <ul class="search-results">
+        <li ng-repeat="module in modules">
+            <h3><a href="#">{{module.name}}</a></h3>
+            <p>A module to double specified number</p>
+            <span>{{module._v}}</span>
+        </li>
+    </ul>
 </div>
-
-
-<div class="panel panel-success" >
-
-    <div class="panel-body" ng-hide="empty" ng-show="!empty">
-        <div class="list-group" ng-repeat="m in modules.lista">
-            <a ng-click="podeClicar()" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#sub_categoria_1">{{m.name}}</a>
-            <div ng-show="clicou">
-                <div ng-repeat="serv in m.services">
-                    <p>{{serv.name}}</p>
-                </div>
-            </div>
-            <div  class="collapse list-group-submenu" id="sub_categoria_1" ng-repeat="serv in m.services">
-                <a class="list-group-item sub-item" data-parent="#sub_categoria_1" >{{serv.name}}</a>
-            </div>
-        </div>
-    </div>
-    <div class="panel-body" ng-hide="!empty" ng-show="empty">
-        <h5>Modules not found</h5>
-    </div>
-
+    <div ng-hide="!empty" ng-show="empty">
+    <h5>Modules not found</h5>
 </div>

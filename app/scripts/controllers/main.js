@@ -18,23 +18,15 @@ angular.module('App')
   .controller('MainCtrl', function ($scope, moduleService) {
     $scope.empty = true;
 
-    $scope.modules = {};
-    $scope.modules.lista = [];
+    $scope.modules = [];
     $scope.clicou = false;
 
     function getModules() {
       moduleService.getModules().then(function(result) {
-        $scope.modules.lista = [];
+        $scope.modules = result;
+        $scope.empty = !(result && result.length > 0);
 
-        if (result || result !== "") {
-          $scope.empty = false;
-
-          result.forEach(function (module) {
-            $scope.modules.lista.push(module);
-          });
-        } else {
-          $scope.empty = true;
-        }
+        $scope.$apply();
       });
     };
 
