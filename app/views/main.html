@@ -1,12 +1,12 @@
-<div ng-hide="empty" ng-show="!empty">
-    <ul class="search-results">
-        <li ng-repeat="module in modules">
-            <h3><a href="#">{{module.name}}</a></h3>
-            <p>A module to double specified number</p>
-            <span>{{module._v}}</span>
-        </li>
-    </ul>
+<div ng-show="main.modules">
+  <ul class="search-results">
+    <li ng-repeat="module in main.modules track by $index">
+      <h3><a href="#">{{module.name}}</a></h3>
+      <p>A module to double specified number</p>
+      <span>{{module._v}}</span>
+    </li>
+  </ul>
 </div>
-    <div ng-hide="!empty" ng-show="empty">
-    <h3 style="color:#5D4037">Modules not found</h5>
+<div ng-show="!main.modules">
+  <h3 style="color:#5D4037">Modules not found</h5>
 </div>

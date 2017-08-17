@@ -15,17 +15,14 @@ jQuery.ajaxSetup({
  * Controller of the App
  */
 angular.module('App')
-  .controller('MainCtrl', function ($scope, moduleService) {
-    $scope.empty = true;
+  .controller('MainCtrl', function ($scope,moduleService) {
+    var self = this;
 
-    $scope.modules = [];
-    $scope.clicou = false;
+    self.clicou = false;
 
     function getModules() {
       moduleService.getModules().then(function(result) {
-        $scope.modules = result;
-        $scope.empty = !(result && result.length > 0);
-
+        self.modules = result;
         $scope.$apply();
       });
     };
