@@ -20,12 +20,12 @@ angular.module('App')
 
     self.clicou = false;
 
-    function getModules() {
+    self.getModules = function() {
       moduleService.getModules().then(function(result) {
         self.modules = result;
         $scope.$apply();
       });
     };
 
-    getModules();
+    self.getModules();
   });
