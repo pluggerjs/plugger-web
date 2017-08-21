@@ -1,7 +1,7 @@
 <div ng-show="main.modules">
   <ul class="search-results">
-    <li ng-repeat="module in main.modules track by $index">
-      <h3><a href="#">{{module.name}}</a></h3>
+    <li ui-sref="details({module:module})" ng-click="main.setSelected(module)" data-toggle="modal" data-target="#myModal" ng-repeat="module in main.modules track by $index">
+      <h3><a>{{module.name}}</a></h3>
       <p>A module to double specified number</p>
       <span>{{module._v}}</span>
     </li>

@@ -14,6 +14,7 @@ angular.module('App')
     services.getModules =  function() {
       return new Promise(function(resolve, reject) {
         $http.get('http://localhost:3000/modules').then(function (res) {
+          console.log(res);
           if (res.status === 200) {
             var keys = Object.keys(res.data);
             var result = [];
