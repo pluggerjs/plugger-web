@@ -1,0 +1,32 @@
+<div id="login">
+    <div class="container" layout-gt-xs="column" layout-padding layout-align="center center">
+
+        <span class="md-display-2 xxl-font-regular">PLUGGER LOGIN</span><br><br>
+        <md-content flex layout-padding class="card-40-center card-login-trans">
+            <form>
+                <div class="md-margin" layout-margin layout-align="center center">
+                    <div layout="row" >
+                        <input id="email-field" ng-model="user.email" placeholder="Email">
+                    </div>
+                    <div layout="row">
+                        <input id="pass-field" type="password" ng-model="user.password" placeholder="Senha">
+                    </div>
+
+
+                    <md-card-actions layout="row" layout-align="center center">
+                        <md-button id="loginButton" type="submit" class="md-raised base-font-medium">ENTRAR</md-button>
+                    </md-card-actions>
+
+                    <div layout="row" ui-sref="signup" layout-align="center center">
+                        <a id="signup-link" class="link-register giant-font-regular">Cadastre-se</a>
+                    </div>
+                    <div layout="row" layout-align="center center">
+                        <a id="forget-link" class="link-forget base-font-regular">Esqueceu a senha?</a>
+                    </div>
+                </div>
+
+            </form>
+        </md-content>
+
+    </div>
+</div>

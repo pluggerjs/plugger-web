@@ -1,0 +1,113 @@
+/* =Typography
+   ============================= */
+
+//  ======== DOCUMENT INFORMATION ======== //
+//	- Document: Typography
+//	- Version:  0.0.5
+//	- Client:   Virtus
+//	- Author:   Matheus P. Silva
+//  ======== DOCUMENT INFORMATION ======== //
+
+//  ======== BASE 16px ======== //
+.base-font{
+  font-size: 16px;
+}
+
+.base-font-regular{
+  @extend .base-font;
+  font-weight: $regular;
+}
+
+.base-font-light{
+  @extend .base-font;
+  font-weight: $light;
+}
+
+.base-font-medium{
+  @extend .base-font;
+  font-weight: $medium;
+}
+
+
+//  ======== SMALL 14px ======== //
+.small-font{
+  font-size: 14px;
+}
+
+.small-font-regular{
+  @extend .small-font;
+  font-weight: $regular;
+}
+
+.small-font-light{
+  @extend .small-font;
+  font-weight: $light;
+}
+
+.small-font-medium{
+  @extend .small-font;
+  font-weight: $medium;
+}
+
+
+//  ======== BIG 20px ======== //
+.big-font{
+  font-size: 20px;
+}
+
+.big-font-regular{
+  @extend .big-font;
+  font-weight: $regular;
+}
+
+.big-font-light{
+  @extend .big-font;
+  font-weight: $light;
+}
+
+.big-font-medium{
+  @extend .big-font;
+  font-weight: $medium;
+}
+
+
+//  ======== GIANT 24px ======== //
+.giant-font{
+  font-size: 24px;
+}
+
+.giant-font-regular{
+  @extend .giant-font;
+  font-weight: $regular;
+}
+
+.giant-font-light{
+  @extend .giant-font;
+  font-weight: $light;
+}
+
+.giant-font-medium{
+  @extend .giant-font;
+  font-weight: $medium;
+}
+
+
+//  ======== XXL 34px ======== //
+.xxl-font{
+  font-size: 34px;
+}
+
+.xxl-font-regular{
+  @extend .xxl-font;
+  font-weight: $regular;
+}
+
+.xxl-font-light{
+  @extend .xxl-font;
+  font-weight: $light;
+}
+
+.xxl-font-medium{
+  @extend .xxl-font;
+  font-weight: $medium;
+}
