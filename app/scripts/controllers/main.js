@@ -2,9 +2,9 @@
 
 jQuery.support.cors = true;
 jQuery.ajaxSetup({
-    xhrFields: {
-        withCredentials: true   // Pass session cookie with requests
-    }
+  xhrFields: {
+    withCredentials: true // Pass session cookie with requests
+  }
 });
 
 /**
@@ -15,20 +15,28 @@ jQuery.ajaxSetup({
  * Controller of the App
  */
 angular.module('App')
-  .controller('MainCtrl', function ($scope, moduleService) {
-    $scope.empty = true;
+  .controller('MainCtrl', function($scope, moduleService,$stateParams) {
+    var self = this;
 
-    $scope.modules = [];
-    $scope.clicou = false;
-
-    function getModules() {
+    self.clicou = false;
+    self.module = $stateParams.module;
+    self.getModules = function() {
       moduleService.getModules().then(function(result) {
-        $scope.modules = result;
-        $scope.empty = !(result && result.length > 0);
-
+        self.modules = result;
+        console.log(self.modules);
+        
         $scope.$apply();
       });
     };
 
-    getModules();
+    self.setSelected = function(module) {
+      self.selected = module;
+    };
+
+    self.getSelected = function() {
+      console.log("teste");
+      return self.selected;
+    }
+
+    self.getModules();
   });
